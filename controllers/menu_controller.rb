@@ -94,13 +94,8 @@ class MenuController
     number = gets.chomp.to_i
     
     if number <= address_book.entries.length
-      address_book.entries.each_with_index do |entry, index|
-        system "clear"
-        if (index == number - 1) 
-          puts entry.to_s
-          break
-        end
-      end
+      system "clear"
+      puts address_book.entries[number - 1].to_s
     else
       puts "#{number} is not a valid input"
       view_entry_number
