@@ -53,11 +53,20 @@ class AddressBook
       elsif name < mid_name
         upper = mid - 1
       elsif name > mid_name
-      lower = mid + 1
+        lower = mid + 1
+      end
+    end
+  end
+    
+    def iterative_search(name)
+      index = 0
+      while index < entries.length
+        if name == entries[index].name
+          return entries[index]
+        else
+          index += 1
+        end
       end
     end
     
-    return nil
-  end
-  
 end
